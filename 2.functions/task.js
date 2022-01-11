@@ -13,9 +13,7 @@ function getArrayParams(arr) {
 
 // Задание 2
 function worker(arr) {
-  let sum = arr.reduce((acc, element) => acc + element, 0);
-
-  return sum;
+  return arr.reduce((acc, element) => acc + element, 0);;
 }
 
 
