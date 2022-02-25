@@ -25,3 +25,14 @@ console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
 library.giveBookByName("Машина времени");
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
+
+const library1 = new Library("Публичная библиотека");
+
+library1.addBook(new Magazine("Телесемь", 2022, 59));
+library1.addBook(new NovelBook("Лев Толстой", "Война и мир", 1869, 1408));
+library1.addBook(new FantasticBook("Я", "Для поиска", 1919, 444));
+
+const garryPotter = new FantasticBook("Джоан Роулинг", "Гарри Поттер", 1997, 432);
+garryPotter.state = 29;
+garryPotter.fix();
+library1.addBook(garryPotter);
