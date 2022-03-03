@@ -6,7 +6,9 @@ class Student {
   }
 
   addMark(mark, subjectName) {
-    if(mark > 0 && mark < 6) {
+    if(mark === undefined || subjectName === undefined || typeof mark !== 'number' || subjectName === '') {
+      console.log('Вводимые папаметры имеют недопустимые значения');
+    } else if(mark > 0 && mark < 6) {
       if(this.subjects === undefined) {
         this.subjects = {[subjectName]: [mark]};
       } else if(subjectName in this.subjects) {
@@ -23,7 +25,7 @@ class Student {
     if(this.marks === undefined) {
       this.marks = marks;
     } else {
-      this.marks.push(marks); // не ясно, как быть, если оценки уже были
+      this.marks.push(marks);
     }
   }
 
@@ -34,6 +36,16 @@ class Student {
     } else {
       console.log('Несуществующий предмет');
     }
+  }
+
+  getAverage(){
+    let value = 0;
+    let i = 0;
+    for(let prop in this.subjects) {
+      i++
+      value += this.getAverageBySubject(prop);
+    }
+    return value/i;
   }
 
   exclude(reason) {
