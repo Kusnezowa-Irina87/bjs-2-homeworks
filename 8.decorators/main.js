@@ -16,5 +16,5 @@ setTimeout(upgradedSendSignal, 300); // проигнорировано так к
 setTimeout(upgradedSendSignal, 900); // проигнорировано аналогично
 setTimeout(upgradedSendSignal, 1200); // проигнорировано аналогично
 setTimeout(upgradedSendSignal, 2300); // проигнорировано аналогично
-setTimeout(upgradedSendSignal, 4400); // Сигнал отправлен
-setTimeout(upgradedSendSignal, 4500); // проигнорировано аналогично
+setTimeout(upgradedSendSignal, 4500); // Сигнал отправлен
+setTimeout(upgradedSendSignal, 4700); // проигнорировано аналогично
