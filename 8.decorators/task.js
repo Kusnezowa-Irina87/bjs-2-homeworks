@@ -38,8 +38,8 @@ function debounceDecoratorNew(f, ms) {
 function debounceDecorator2(f, ms) {
   let timeout;
   let count = 0;
-  return function (...args) { 
-    count ++;
+  function wrapper(...args) { 
+    wrapper.count ++;
     if (!timeout) {
       f.apply(this, args);
     } 
@@ -49,4 +49,7 @@ function debounceDecorator2(f, ms) {
       f.apply(this, args);
     }, ms);  
   }
+  
+  wrapper.count = 0;
+  return wrapper;
 }
